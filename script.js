@@ -20,9 +20,19 @@ window.addEventListener("load", function() {
        let copilotName = document.querySelector("input[name=dopilotName]");
        let fuelLevel = document.querySelector("input[name=fuelLevel");
        let cargoMass = document.querySelector("input[name=cargoMass");
+       let faultyItems = document.getElementById("faultyItems");
+       let fuelStatus = document.getElementById("fuelStatus");
+       let launchStatus = document.getElementById("launchStatus");
        if (pilotName.value === '' || copilotName.value === '' || fuelLevel.value === '' || cargoMass.value === ''){
            alert("All fields are rewquired!");
            event.preventDefault();
+       }
+       pilotName.innerHTML = `${pilotName.value}`;
+       copilotName.innerHTML = `${copilotName.value}`;
+       if (Number(fuelLevel) < 10000) {
+            faultyItems.setAttribute("visibility", "visible");
+            fuelStatus.innerHTML = `Fuel level not high enough for launch`;
+            launchStatus.innerHTML = `Shuttle not ready for launch`;
        }
    })
    
