@@ -53,4 +53,3 @@ module.exports.formSubmission = formSubmission;
 module.exports.pickPlanet = pickPlanet; 
 module.exports.myFetch = myFetch;
 
-//lines 2 and 50-54 need to be un-commented when project is complete.

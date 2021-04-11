@@ -41,3 +41,5 @@ window.addEventListener("load", function() {
    })
    
 });
+
+//listed planets stuff needs to be un-commented
