@@ -1,6 +1,8 @@
 // Write your JavaScript code here!
 //const myFetch = require('./scriptHelper.js');
 
+const { formSubmission } = require("./scriptHelper");
+
 window.addEventListener("load", function() {
 
    /*let listedPlanets;
@@ -28,9 +30,11 @@ window.addEventListener("load", function() {
        if (pilotName.value === '' || copilotName.value === '' || fuelLevel.value === '' || cargoMass.value === ''){
            alert("All fields are required!");
            event.preventDefault();
+           return;
        }
-       pilotStatus.innerHTML = `${pilotName.value} is Ready`;
-       copilotStatus.innerHTML = `${copilotName.value} is Ready`;
+       formSubmission()
+       pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch`;
+       copilotStatus.innerHTML = `Co-pilot ${copilotName.value} is ready for launch`;
        if (Number(fuelLevel.value) < 10000) {
             faultyItems.style.visibility = "visible";
             fuelStatus.innerHTML = `Fuel level not high enough for launch`;

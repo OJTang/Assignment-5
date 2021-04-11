@@ -29,10 +29,22 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   validateInput(pilot);
-   validateInput(copilot);
-   validateInput(fuelLevel);
-   validateInput(cargoLevel);
+   if (validateInput(pilot) === "Is a Number") {
+        alert("Make sure to enter valid information for each field!");
+        event.preventDefault();
+   }
+   if (validateInput(copilot) === "Is a Number") {
+       alert("Make sure to enter valid information for each field!");
+       event.preventDefault();
+   }
+   if (validateInput(fuelLevel) === "Not a Number") {
+       alert("Make sure to enter valid information for each field!");
+       event.preventDefault();
+   }
+   if (validateInput(cargoLevel) === "Not a Number") {
+       alert("Make sure to enter valid information for each field!");
+       event.preventDefault();
+   }
 }
 
 async function myFetch() {
