@@ -1,7 +1,7 @@
 // Write your JavaScript code here!
 //const myFetch = require('./scriptHelper.js');
 
-const { formSubmission } = require("./scriptHelper");
+//const { formSubmission } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
 
@@ -22,7 +22,7 @@ window.addEventListener("load", function() {
        let copilotName = document.querySelector("input[name=copilotName]");
        let fuelLevel = document.querySelector("input[name=fuelLevel");
        let cargoMass = document.querySelector("input[name=cargoMass");
-       let faultyItems = document.querySelector("div[id=faultyItems]");
+       let list = document.querySelector("div[id=faultyItems]");
        let fuelStatus = document.getElementById("fuelStatus");
        let launchStatus = document.getElementById("launchStatus");
        let pilotStatus = document.getElementById("pilotStatus");
@@ -32,13 +32,13 @@ window.addEventListener("load", function() {
            event.preventDefault();
            return;
        }
-       formSubmission()
+
        pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch`;
        copilotStatus.innerHTML = `Co-pilot ${copilotName.value} is ready for launch`;
        if (Number(fuelLevel.value) < 10000) {
-            faultyItems.style.visibility = "visible";
+            list.style.visibility = "visible";
             fuelStatus.innerHTML = `Fuel level not high enough for launch`;
-            launchStatus.innerHTML = `Shuttle not ready for launch`;
+            launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
             launchStatus.style.color = "red";
             event.preventDefault();
        }
