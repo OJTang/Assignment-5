@@ -34,6 +34,8 @@ window.addEventListener("load", function() {
 
    let form = document.querySelector("form");
    form.addEventListener("submit", function(event){
+       let document = window.document;
+
        let pilotName = document.querySelector("input[name=pilotName]");
 
        let copilotName = document.querySelector("input[name=copilotName]");
@@ -52,7 +54,8 @@ window.addEventListener("load", function() {
            return;
        }
 
-      formSubmission(form, list, pilotName, copilotName, fuelLevel, cargoMass);
+
+      formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
 
 
    });
