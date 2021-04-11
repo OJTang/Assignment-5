@@ -41,7 +41,7 @@ window.addEventListener("load", function() {
             fuelStatus.innerHTML = `Fuel level not high enough for launch`;
             launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
             launchStatus.style.color = "red";
-            
+            event.preventDefault();
        }
    })
    
