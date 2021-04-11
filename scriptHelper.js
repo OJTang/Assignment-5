@@ -36,12 +36,38 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
         copilotStatus.innerHTML = `Co-pilot ${copilotName.value} is ready for launch`;
 
+        if (validateInput(pilot.value) === "Is a Number") {
+            alert("Make sure to enter valid information for each field!");
+            
+            event.preventDefault();
+            return;
+        }
+
+        if (validateInput(copilot.value) === "Is a Number") {
+            alert("Make sure to enter valid information for each field!");
+            
+            event.preventDefault();
+            return;
+        }
+
+        if (validateInput(fuelLevel.value) !== "Is a Number") {
+            alert("Make sure to enter valid information for each field!");
+            
+            event.preventDefault();
+            return;
+        }
+
+        if (validateInput(cargoLevel.value) === "Not a Number") {
+            alert("Make sure to enter valid information for each field!");
+            
+            event.preventDefault();
+            return;
+        }
+
         let cargoMass = document.querySelector("input[name=cargoMass]");
 
         if (Number(fuelLevel.value) < 10000) {
             list.style.visibility = "visible";
-
-            console.log(list.style.visibility);
 
             fuelStatus.innerHTML = `Fuel level not high enough for launch`;
 
@@ -84,27 +110,7 @@ async function myFetch() {
     let planetsReturned;
 
     planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
-        response.json().then(function(json){
-            console.log(json);
-
-            let missionTarget = document.getElementById("missionTarget");
-
-            let i = pickPlanet(json);
-
-            let name = json[i].name;
-
-            let diameter = json[i].diameter;
-
-            let star = json[i].star;
-
-            let distance = json[i].distance;
-
-            let moons = json[i].moons;
-
-            let imageUrl = json[i].image;
-
-            addDestinationInfo(missionTarget, name, diameter, star, distance, moons, imageUrl)
-        })
+            return response.json();
         });
 
     return planetsReturned;
