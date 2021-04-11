@@ -3,7 +3,7 @@ require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
-   document.innerHTML = 
+   missionTarget.innerHTML = 
     `<h2>Mission Destination</h2>
         <ol>
             <li>Name: ${name}</li>
@@ -12,7 +12,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
             <li>Distance from Earth: ${distance}</li>
             <li>Number of Moons: ${moons}</li>
         </ol>
-    <img src="${imageUrl}">` + missionTarget.innerHTML;
+    <img src="${imageUrl}">`;
 }
 
 function validateInput(testInput) {
