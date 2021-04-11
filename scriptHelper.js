@@ -29,7 +29,10 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   
+   validateInput(pilot);
+   validateInput(copilot);
+   validateInput(fuelLevel);
+   validateInput(cargoLevel);
 }
 
 async function myFetch() {
