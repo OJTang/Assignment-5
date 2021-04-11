@@ -6,22 +6,27 @@ window.addEventListener("load", function() {
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    let listedPlanetsResponse = myFetch();
-   listedPlanetsResponse.then(function (json) {
-            let missionTarget = document.getElementById("missionTarget");
+   listedPlanetsResponse.then(function (result) {
+       listedPlanets = result;
+       console.log(listedPlanets);
+   }).then(function () {
+       console.log(listedPlanets);
+       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
+       let missionTarget = document.getElementById("missionTarget");
 
-            let i = pickPlanet(json);
+            let i = pickPlanet(listedPlanets);
 
-            let name = json[i].name;
+            let name = listedPlanets[i].name;
 
-            let diameter = json[i].diameter;
+            let diameter = listedPlanets[i].diameter;
 
-            let star = json[i].star;
+            let star = listedPlanets[i].star;
 
-            let distance = json[i].distance;
+            let distance = listedPlanets[i].distance;
 
-            let moons = json[i].moons;
+            let moons = listedPlanets[i].moons;
 
-            let imageUrl = json[i].image;
+            let imageUrl = listedPlanets[i].image;
 
             addDestinationInfo(missionTarget, name, diameter, star, distance, moons, imageUrl)
    });
