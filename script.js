@@ -1,7 +1,4 @@
 // Write your JavaScript code here!
-//const myFetch = require('./scriptHelper.js');
-
-//const { formSubmission } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
 
@@ -32,17 +29,7 @@ window.addEventListener("load", function() {
            event.preventDefault();
            return;
        }
-    console.log(list.style.visibility);
-       pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch`;
-       copilotStatus.innerHTML = `Co-pilot ${copilotName.value} is ready for launch`;
-       if (Number(fuelLevel.value) < 10000) {
-            list.style.visibility = "visible";
-            console.log(list.style.visibility);
-            fuelStatus.innerHTML = `Fuel level not high enough for launch`;
-            launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
-            launchStatus.style.color = "red";
-            event.preventDefault();
-       }
+      formSubmission(form, list, pilotName, copilotName, fuelLevel, cargoMass);
    })
    
 });

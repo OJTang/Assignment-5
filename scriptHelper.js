@@ -29,22 +29,19 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-   if (validateInput(pilot) === "Is a Number") {
-        alert("Make sure to enter valid information for each field!");
-        event.preventDefault();
-   }
-   if (validateInput(copilot) === "Is a Number") {
-       alert("Make sure to enter valid information for each field!");
-       event.preventDefault();
-   }
-   if (validateInput(fuelLevel) === "Not a Number") {
-       alert("Make sure to enter valid information for each field!");
-       event.preventDefault();
-   }
-   if (validateInput(cargoLevel) === "Not a Number") {
-       alert("Make sure to enter valid information for each field!");
-       event.preventDefault();
-   }
+        let pilotName = document.querySelector("input[name=pilotName]");
+        let copilotName = document.querySelector("input[name=copilotName]");
+        pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch`;
+        copilotStatus.innerHTML = `Co-pilot ${copilotName.value} is ready for launch`;
+        if (Number(fuelLevel.value) < 10000) {
+            list.style.visibility = "visible";
+            console.log(list.style.visibility);
+            fuelStatus.innerHTML = `Fuel level not high enough for launch`;
+            launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
+            launchStatus.style.color = "red";
+            event.preventDefault();
+       }
+    return;
 }
 
 async function myFetch() {
