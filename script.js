@@ -19,6 +19,8 @@ window.addEventListener("load", function() {
 
     list.style.visiblity = "hidden";
 
+    console.log(document.body);
+
     let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    let listedPlanetsResponse = myFetch();
@@ -62,7 +64,7 @@ window.addEventListener("load", function() {
 
       let missionTarget = document.querySelector("#missionTarget");
 
-      formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
+      formSubmission(document.body, list, pilotName, copilotName, fuelLevel, cargoMass);
 
 
    });
