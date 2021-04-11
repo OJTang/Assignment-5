@@ -3,7 +3,23 @@
 
 window.addEventListener("load", function() {
 
-   let listedPlanets;
+    let document = window.document;
+
+    let form = document.querySelector("form");
+
+    let pilotName = document.querySelector("input[name=pilotName]");
+
+    let copilotName = document.querySelector("input[name=copilotName]");
+
+    let fuelLevel = document.querySelector("input[name=fuelLevel]");
+
+    let cargoMass = document.querySelector("input[name=cargoMass]");
+
+    let list = document.querySelector("div[id=faultyItems]");
+
+    list.style.visiblity = "hidden";
+
+    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    let listedPlanetsResponse = myFetch();
    listedPlanetsResponse.then(function (result) {
@@ -34,30 +50,18 @@ window.addEventListener("load", function() {
    });
 
 
-   let form = document.querySelector("form");
-   form.addEventListener("submit", function(event){
-       let document = window.document;
+    form.addEventListener("submit", function
+        (event){
+            if (pilotName.value === '' || copilotName.value === '' || fuelLevel.value === '' || cargoMass.value === ''){
+                alert("All fields are required!");
 
-       let pilotName = document.querySelector("input[name=pilotName]");
-
-       let copilotName = document.querySelector("input[name=copilotName]");
-
-       let fuelLevel = document.querySelector("input[name=fuelLevel]");
-
-       let cargoMass = document.querySelector("input[name=cargoMass]");
-
-       let list = document.querySelector("div[id=faultyItems]");
-
-       if (pilotName.value === '' || copilotName.value === '' || fuelLevel.value === '' || cargoMass.value === ''){
-           alert("All fields are required!");
-
-           event.preventDefault();
+                event.preventDefault();
 
            return;
        }
 
       let missionTarget = document.querySelector("#missionTarget");
-      
+
       formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
 
 
