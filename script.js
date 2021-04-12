@@ -17,10 +17,6 @@ window.addEventListener("load", function() {
 
     let list = document.querySelector("div[id=faultyItems]");
 
-    list.style.visiblity = "hidden";
-
-    console.log(document.body);
-
     let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
    let listedPlanetsResponse = myFetch();
