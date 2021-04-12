@@ -42,31 +42,31 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         copilotStatus.innerHTML = `Co-pilot ${copilotName.value} is ready for launch`;
 
         if (validateInput(pilot.value) === "Is a Number") {
-            window.alert("Make sure to enter valid information for each field!");
+            alert("Make sure to enter valid information for each field!");
             
             event.preventDefault();
-            return;
+            //return;
         }
 
         if (validateInput(copilot.value) === "Is a Number") {
-            window.alert("Make sure to enter valid information for each field!");
+            alert("Make sure to enter valid information for each field!");
             
             event.preventDefault();
-            return;
+            //return;
         }
 
         if (validateInput(fuelLevel.value) !== "Is a Number") {
-            window.alert("Make sure to enter valid information for each field!");
+            alert("Make sure to enter valid information for each field!");
             
             event.preventDefault();
-            return;
+            //return;
         }
 
         if (validateInput(cargoLevel.value) === "Not a Number") {
-            window.alert("Make sure to enter valid information for each field!");
+            alert("Make sure to enter valid information for each field!");
             
             event.preventDefault();
-            return;
+            //return;
         }
 
         let cargoMass = document.querySelector("input[name=cargoMass]");
@@ -108,7 +108,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
        }
 
     event.preventDefault();
-    return list;
+    return;
 }
 
 async function myFetch() {
