@@ -70,7 +70,7 @@ window.addEventListener("load", function() {
 
 
    });
-
+ formSubmission(document.body, list, pilotName, copilotName, fuelLevel, cargoMass);
 
    
 });
