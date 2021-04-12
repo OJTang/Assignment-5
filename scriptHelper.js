@@ -44,28 +44,28 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         if (validateInput(pilot.value) === "Is a Number") {
             //alert("Make sure to enter valid information for each field!");
             
-            event.preventDefault();
+            //event.preventDefault();
             //return;
         }
 
         if (validateInput(copilot.value) === "Is a Number") {
             //alert("Make sure to enter valid information for each field!");
             
-            event.preventDefault();
+           // event.preventDefault();
             //return;
         }
 
         if (validateInput(fuelLevel.value) !== "Is a Number") {
             //alert("Make sure to enter valid information for each field!");
             
-            event.preventDefault();
+            //event.preventDefault();
             //return;
         }
 
         if (validateInput(cargoLevel.value) === "Not a Number") {
             //alert("Make sure to enter valid information for each field!");
             
-            event.preventDefault();
+            //event.preventDefault();
             //return;
         }
 
