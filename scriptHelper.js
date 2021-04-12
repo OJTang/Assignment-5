@@ -42,31 +42,31 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         copilotStatus.innerHTML = `Co-pilot ${copilotName.value} is ready for launch`;
 
         if (validateInput(pilot.value) === "Is a Number") {
-            //alert("Make sure to enter valid information for each field!");
+            alert("Make sure to enter valid information for each field!");
             
-            //event.preventDefault();
-            //return;
+            event.preventDefault();
+            return;
         }
 
         if (validateInput(copilot.value) === "Is a Number") {
-            //alert("Make sure to enter valid information for each field!");
+            alert("Make sure to enter valid information for each field!");
             
-           // event.preventDefault();
-            //return;
+            event.preventDefault();
+            return;
         }
 
         if (validateInput(fuelLevel.value) !== "Is a Number") {
-            //alert("Make sure to enter valid information for each field!");
+            alert("Make sure to enter valid information for each field!");
             
-            //event.preventDefault();
-            //return;
+            event.preventDefault();
+            return;
         }
 
         if (validateInput(cargoLevel.value) === "Not a Number") {
-            //alert("Make sure to enter valid information for each field!");
+            alert("Make sure to enter valid information for each field!");
             
-            //event.preventDefault();
-            //return;
+            event.preventDefault();
+            return;
         }
 
         let cargoMass = document.querySelector("input[name=cargoMass]");
@@ -80,7 +80,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
             launchStatus.style.color = "red";
 
-            //event.preventDefault();
+            event.preventDefault();
        }
 
         if (Number(cargoMass.value) > 10000) {
@@ -92,7 +92,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
            launchStatus.style.color = "red";
 
-           //event.preventDefault();
+           event.preventDefault();
        } 
 
        if (Number(fuelLevel.value) >= 10000 && Number(cargoMass.value) <= 10000) {
@@ -107,8 +107,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             launchStatus.innerHTML = `Shuttle is ready for launch`;
        }
 
-    //event.preventDefault();
-    return;
+    event.preventDefault();
+    return list;
 }
 
 async function myFetch() {
