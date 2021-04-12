@@ -29,8 +29,6 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
-        let alert;
-
         let pilotStatus = document.querySelector("li[id=pilotStatus]");
 
         let copilotStatus = document.querySelector("li[id=copilotStatus]");
@@ -44,28 +42,28 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         copilotStatus.innerHTML = `Co-pilot ${copilotName.value} is ready for launch`;
 
         if (validateInput(pilot.value) === "Is a Number") {
-            alert("Make sure to enter valid information for each field!");
+            window.alert("Make sure to enter valid information for each field!");
             
             event.preventDefault();
             return;
         }
 
         if (validateInput(copilot.value) === "Is a Number") {
-            alert("Make sure to enter valid information for each field!");
+            window.alert("Make sure to enter valid information for each field!");
             
             event.preventDefault();
             return;
         }
 
         if (validateInput(fuelLevel.value) !== "Is a Number") {
-            alert("Make sure to enter valid information for each field!");
+            window.alert("Make sure to enter valid information for each field!");
             
             event.preventDefault();
             return;
         }
 
         if (validateInput(cargoLevel.value) === "Not a Number") {
-            alert("Make sure to enter valid information for each field!");
+            window.alert("Make sure to enter valid information for each field!");
             
             event.preventDefault();
             return;
