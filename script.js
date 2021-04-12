@@ -5,6 +5,10 @@ window.addEventListener("load", function() {
 
     let document = window.document;
 
+    let pilotStatus = document.querySelector("li[id=pilotStatus]");
+
+    let copilotStatus = document.querySelector("li[id=copilotStatus]");
+
     let list = document.querySelector("div[id=faultyItems]");
 
     list.style.visibility = "hidden";
