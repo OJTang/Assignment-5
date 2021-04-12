@@ -28,6 +28,7 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+    
         list.style.visiblity = "hidden";
 
         let pilotName = document.querySelector("input[name=pilotName]");
