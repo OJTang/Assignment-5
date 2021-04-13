@@ -3,8 +3,6 @@
 
 window.addEventListener("load", function() {
 
-    let document = window.document;
-
     let pilotStatus = document.querySelector("li[id=pilotStatus]");
 
     let copilotStatus = document.querySelector("li[id=copilotStatus]");
@@ -66,7 +64,7 @@ window.addEventListener("load", function() {
 
       let missionTarget = document.querySelector("#missionTarget");
 
-      formSubmission(document.body, list, pilotName, copilotName, fuelLevel, cargoMass);
+      formSubmission(window.document, list, pilotName, copilotName, fuelLevel, cargoMass);
 
 
    });
