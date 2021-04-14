@@ -1,6 +1,5 @@
 // Write your JavaScript code here!
 
-
 window.addEventListener("load", function() {
 
     let pilotStatus = document.querySelector("li[id=pilotStatus]");
@@ -64,7 +63,7 @@ window.addEventListener("load", function() {
 
       let missionTarget = document.querySelector("#missionTarget");
 
-      formSubmission(window.document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value);
+      formSubmission(window.document, list, pilotName, copilotName, fuelLevel, cargoMass);
 
 
    });
