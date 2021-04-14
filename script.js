@@ -64,7 +64,7 @@ window.addEventListener("load", function() {
 
       let missionTarget = document.querySelector("#missionTarget");
 
-      formSubmission(window.document, list, pilotName, copilotName, fuelLevel, cargoMass);
+      formSubmission(window.document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value);
 
 
    });
