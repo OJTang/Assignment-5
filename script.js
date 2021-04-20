@@ -2,6 +2,8 @@
 
 window.addEventListener("load", function() {
 
+    let alert = window.alert;
+
     let pilotStatus = document.querySelector("li[id=pilotStatus]");
 
     let copilotStatus = document.querySelector("li[id=copilotStatus]");
