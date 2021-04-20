@@ -28,6 +28,7 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+        let alert = window.alert;
 
         let pilotStatus = document.querySelector("li[id=pilotStatus]");
 
