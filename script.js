@@ -58,12 +58,9 @@ window.addEventListener("load", function() {
                 event.preventDefault();
 
            return;
-       }
-
-      let missionTarget = document.querySelector("#missionTarget");
-
-      formSubmission(window.document, list, pilotName, copilotName, fuelLevel, cargoMass);
-
+       } else {
+            formSubmission(window.document, list, pilotName, copilotName, fuelLevel, cargoMass);
+        }
 
    });
    
