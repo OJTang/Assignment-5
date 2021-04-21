@@ -1,6 +1,8 @@
 // Write your JavaScript code here!
 
 window.addEventListener("load", function() {
+    let document = window.document;
+
     let pilotStatus = document.querySelector("li[id=pilotStatus]");
 
     let copilotStatus = document.querySelector("li[id=copilotStatus]");
@@ -81,7 +83,7 @@ window.addEventListener("load", function() {
             event.preventDefault();
             return;
         } else {
-            formSubmission(window.document, list, pilotName, copilotName, fuelLevel, cargoMass);
+            formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
             event.preventDefault();
         }
 
