@@ -53,6 +53,8 @@ window.addEventListener("load", function() {
 
     form.addEventListener("submit", function
         (event){
+            let document = window.document;
+
             list.style.visibility = "hidden";
 
             if (pilotName.value === '' || copilotName.value === '' || fuelLevel.value === '' || cargoMass.value === ''){
@@ -83,6 +85,7 @@ window.addEventListener("load", function() {
             event.preventDefault();
             return;
         } else {
+            let document = window.document;
             formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
             event.preventDefault();
         }
