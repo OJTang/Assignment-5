@@ -33,7 +33,6 @@ window.addEventListener("load", function() {
 
             let i = pickPlanet(listedPlanets);
 
-
             let name = listedPlanets[i].name;
 
             let diameter = listedPlanets[i].diameter;
@@ -58,7 +57,28 @@ window.addEventListener("load", function() {
                 event.preventDefault();
 
            return;
-       } else {
+            } else if (validateInput(pilotName.value) === "Is a Number") {
+        
+            alert("Make sure to enter valid information for each field!");
+            
+            event.preventDefault();
+            return;
+        } else if (validateInput(copilotName.value) === "Is a Number") {
+            alert("Make sure to enter valid information for each field!");
+            
+            event.preventDefault();
+            return;
+        } else if (validateInput(fuelLevel.value) !== "Is a Number") {
+            alert("Make sure to enter valid information for each field!");
+            
+            event.preventDefault();
+            return;
+        } else if (validateInput(cargoMass.value) === "Not a Number") {
+            alert("Make sure to enter valid information for each field!");
+            
+            event.preventDefault();
+            return;
+        } else {
             formSubmission(window.document, list, pilotName, copilotName, fuelLevel, cargoMass);
         }
 
