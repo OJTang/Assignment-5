@@ -33,19 +33,19 @@ window.addEventListener("load", function() {
 
             let missionTarget = document.getElementById("missionTarget");
 
-            let i = pickPlanet(listedPlanets);
+            let planet = pickPlanet(listedPlanets);
 
-            let name = listedPlanets[i].name;
+            let name = planet.name;
 
-            let diameter = listedPlanets[i].diameter;
+            let diameter = planet.diameter;
 
-            let star = listedPlanets[i].star;
+            let star = planet.star;
 
-            let distance = listedPlanets[i].distance;
+            let distance = planet.distance;
 
-            let moons = listedPlanets[i].moons;
+            let moons = planet.moons;
 
-            let imageUrl = listedPlanets[i].image;
+            let imageUrl = planet.image;
 
             addDestinationInfo(missionTarget, name, diameter, star, distance, moons, imageUrl)
    });
