@@ -80,6 +80,7 @@ window.addEventListener("load", function() {
             return;
         } else {
             formSubmission(window.document, list, pilotName, copilotName, fuelLevel, cargoMass);
+            event.preventDefault();
         }
 
    });

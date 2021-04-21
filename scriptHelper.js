@@ -54,7 +54,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
             launchStatus.style.color = "red";
 
-            event.preventDefault();
+            
        }
 
         if (Number(cargoMass.value) > 10000) {
@@ -66,7 +66,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
            launchStatus.style.color = "red";
 
-           event.preventDefault();
+           
        } 
 
        if (Number(fuelLevel.value) >= 10000 && Number(cargoMass.value) <= 10000) {
@@ -81,7 +81,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             launchStatus.innerHTML = `Shuttle is ready for launch`;
        }
 
-    event.preventDefault();
+    
     return list;
 }
 
