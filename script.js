@@ -86,7 +86,8 @@ window.addEventListener("load", function() {
             return;
         } else {
             let document = window.document;
-            formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
+            let faultyItems = document.querySelector("div[id=faultyItems]");
+            formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel, cargoMass);
             event.preventDefault();
         }
 
