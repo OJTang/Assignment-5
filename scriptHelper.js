@@ -46,7 +46,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         let cargoMass = document.querySelector("input[name=cargoMass]");
 
         if (Number(fuelLevel.value) < 10000) {
-            list.style.visibility = "visible";
+            let faultyItems = document.querySelector("div[id=faultyItems]");
+
+            faultyItems.style.visibility = "visible";
 
             fuelStatus.innerHTML = `Fuel level too low for launch`;
 
