@@ -29,6 +29,8 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
+        document = window.document;
+
         list.style.visibility = "hidden";
 
         let pilotStatus = document.querySelector("li[id=pilotStatus]");
@@ -42,8 +44,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch`;
 
         copilotStatus.innerHTML = `Co-pilot ${copilotName.value} is ready for launch`;
-
-
 
         let cargoMass = document.querySelector("input[name=cargoMass]");
 
