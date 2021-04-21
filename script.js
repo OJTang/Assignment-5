@@ -112,7 +112,7 @@ window.addEventListener("load", function() {
 
            return;
             } else if (formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass) === 3) {
-                list.style.visibility = "hidden";
+                list.style.visibility = "visible";
 
                 fuelStatus.innerHTML = `Fuel level high enough for launch`;
 
