@@ -39,13 +39,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
         let copilotName = document.querySelector("input[name=copilotName]");
 
-        pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch`;
+        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
 
-        copilotStatus.innerHTML = `Co-pilot ${copilotName.value} is ready for launch`;
+        copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
 
         let cargoMass = document.querySelector("input[name=cargoMass]");
 
-        if (Number(fuelLevel.value) < 10000) {
+        if (Number(fuelLevel) < 10000) {
             /*let faultyItems = document.querySelector("div[id=faultyItems]");
 
             faultyItems.style.visibility = "visible";
@@ -60,7 +60,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             
        }
 
-        if (Number(cargoMass.value) > 10000) {
+        if (Number(cargoLevel) > 10000) {
            /*list.style.visibility = "visible";
 
            cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
@@ -72,7 +72,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
            return 2;
        } 
 
-       if (Number(fuelLevel.value) >= 10000 && Number(cargoMass.value) <= 10000) {
+       if (Number(fuelLevel) >= 10000 && Number(cargoLevel) <= 10000) {
             /*list.style.visibility = "hidden";
 
             fuelStatus.innerHTML = `Fuel level high enough for launch`;

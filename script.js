@@ -13,9 +13,9 @@ window.addEventListener("load", function() {
 
     let form = document.querySelector("form");
 
-    let pilotName = document.querySelector("input[name=pilotName]").value;
+    let pilotName = document.querySelector("input[name=pilotName]");
 
-    let copilotName = document.querySelector("input[name=copilotName]").value;
+    let copilotName = document.querySelector("input[name=copilotName]");
 
     let fuelLevel = document.querySelector("input[name=fuelLevel]");
 
@@ -86,8 +86,8 @@ window.addEventListener("load", function() {
             event.preventDefault();
             return;
         } else {
-            formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
-            if (formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass) === 1) {
+            formSubmission(document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value);
+            if (formSubmission(document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value) === 1) {
                 list.style.visibility = "visible";
 
                 fuelStatus.innerHTML = `Fuel level too low for launch`;
@@ -99,7 +99,7 @@ window.addEventListener("load", function() {
                 event.preventDefault();
             
             return;
-            } else if (formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass) === 2){
+            } else if (formSubmission(document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value) === 2){
                 list.style.visibility = "visible";
 
                 cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
@@ -111,7 +111,7 @@ window.addEventListener("load", function() {
                 event.preventDefault();
 
            return;
-            } else if (formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass) === 3) {
+            } else if (formSubmission(document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value) === 3) {
                 list.style.visibility = "visible";
 
                 fuelStatus.innerHTML = `Fuel level high enough for launch`;
