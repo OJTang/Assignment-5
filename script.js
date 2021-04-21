@@ -29,6 +29,7 @@ window.addEventListener("load", function() {
        console.log(listedPlanets);
    }).then(function () {
        console.log(listedPlanets);
+       console.log(formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass))
        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
 
             let missionTarget = document.getElementById("missionTarget");
@@ -85,9 +86,44 @@ window.addEventListener("load", function() {
             event.preventDefault();
             return;
         } else {
-            let document = window.document;
-            let faultyItems = document.querySelector("div[id=faultyItems]");
-            formSubmission(document, faultyItems, pilotName, copilotName, fuelLevel, cargoMass);
+            formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass);
+            if (formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass) === 1) {
+                list.style.visibility = "visible";
+
+                fuelStatus.innerHTML = `Fuel level too low for launch`;
+
+                launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
+
+                launchStatus.style.color = "red";
+
+                event.preventDefault();
+            
+            return;
+            } else if (formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass) === 2){
+                list.style.visibility = "visible";
+
+                cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
+
+                launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
+
+                launchStatus.style.color = "red";
+
+                event.preventDefault();
+
+           return;
+            } else if (formSubmission(document, list, pilotName, copilotName, fuelLevel, cargoMass) === 3) {
+                list.style.visibility = "hidden";
+
+                fuelStatus.innerHTML = `Fuel level high enough for launch`;
+
+                cargoStatus.innerHTML = `Cargo mass low enough for launch`;
+
+                launchStatus.style.color = "green";
+
+                launchStatus.innerHTML = `Shuttle is ready for launch`;
+
+                event.preventDefault();
+            }
             event.preventDefault();
         }
 
