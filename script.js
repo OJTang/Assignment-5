@@ -90,9 +90,11 @@ window.addEventListener("load", function() {
 
             let copilotStatus = window.document.querySelector("li[id=copilotStatus]");
 
-            let pilotName = window.document.querySelector("input[name=pilotName]");
+            let pilotName = document.querySelector("input[name=pilotName]");
 
-            let copilotName = window.document.querySelector("input[name=copilotName]");
+            let copilotName = document.querySelector("input[name=copilotName]");
+
+            let cargoMass = document.querySelector("input[name=cargoMass]");
 
             formSubmission(document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value);
 

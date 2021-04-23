@@ -28,14 +28,15 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+            let pilotStatus = window.document.querySelector("li[id=pilotStatus]");
 
-        list.style.visibility = "hidden";
+            let copilotStatus = window.document.querySelector("li[id=copilotStatus]");
 
-        pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
+            list.style.visibility = "hidden";
 
-        copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
+            pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
 
-        let cargoMass = document.querySelector("input[name=cargoMass]");
+            copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
 
         if (Number(fuelLevel) < 10000) {
             let faultyItems = window.document.querySelector("div[id=faultyItems]");
