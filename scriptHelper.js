@@ -28,9 +28,9 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-            let pilotStatus = window.document.querySelector("li[id=pilotStatus]");
+            let pilotStatus = document.querySelector("li[id=pilotStatus]");
 
-            let copilotStatus = window.document.querySelector("li[id=copilotStatus]");
+            let copilotStatus = document.querySelector("li[id=copilotStatus]");
 
             list.style.visibility = "hidden";
 
