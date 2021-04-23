@@ -48,7 +48,7 @@ window.addEventListener("load", function() {
 
             let imageUrl = planet.image;
 
-            addDestinationInfo(missionTarget, name, diameter, star, distance, moons, imageUrl)
+            addDestinationInfo(window.document, name, diameter, star, distance, moons, imageUrl)
    });
 
 

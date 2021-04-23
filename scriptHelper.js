@@ -3,16 +3,18 @@ require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
-   missionTarget.innerHTML = 
-    `<h2>Mission Destination</h2>
-        <ol>
-            <li>Name: ${name}</li>
-            <li>Diameter: ${diameter}</li>
-            <li>Star: ${star}</li>
-            <li>Distance from Earth: ${distance}</li>
-            <li>Number of Moons: ${moons}</li>
-        </ol>
-    <img src="${imageUrl}">`;
+    let missionTarget = document.getElementById("missionTarget");
+
+    missionTarget.innerHTML = 
+        `<h2>Mission Destination</h2>
+            <ol>
+                <li>Name: ${name}</li>
+                <li>Diameter: ${diameter}</li>
+                <li>Star: ${star}</li>
+                <li>Distance from Earth: ${distance}</li>
+                <li>Number of Moons: ${moons}</li>
+            </ol>
+        <img src="${imageUrl}">`;
 }
 
 function validateInput(testInput) {
@@ -59,7 +61,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
             launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
 
-            launchStatus.style.color = "red";
+            launchStatus.style.color = "rgb(199, 37, 78)";
             
             return;
             
@@ -72,7 +74,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
            launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
 
-           launchStatus.style.color = "red";
+           launchStatus.style.color = "rgb(199, 37, 78)";
 
            return;
        } 
@@ -84,9 +86,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
             cargoStatus.innerHTML = `Cargo mass low enough for launch`;
 
-            launchStatus.style.color = "green";
+            launchStatus.style.color = "rgb(65, 159, 106)";
 
-            launchStatus.innerHTML = `Shuttle is ready for launch`;
+            launchStatus.innerHTML = `Shuttle is Ready for Launch`;
             
             return;
        }
