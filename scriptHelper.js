@@ -52,6 +52,26 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
             copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
 
+
+
+       if (Number(fuelLevel) >= 10000) {
+
+            fuelStatus.innerHTML = `Fuel level high enough for launch`;
+
+            
+            
+            
+       }
+
+       if (Number(cargoLevel) <= 10000) {
+
+            cargoStatus.innerHTML = `Cargo mass low enough for launch`;
+
+            
+            
+            
+       }
+
         
         if (Number(cargoLevel) > 10000) {
            list.style.visibility = "visible";
@@ -61,8 +81,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
            launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
 
            launchStatus.style.color = "rgb(199, 37, 78)";
-
-           return;
+        
+           
+           
         }
 
         if (Number(fuelLevel) < 10000) {
@@ -76,12 +97,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
             launchStatus.style.color = "rgb(199, 37, 78)";
 
-            return;
+            
 
            
        }
 
-       if (Number(fuelLevel) >= 10000) {
+
+       if (Number(cargoLevel) <= 10000 && Number(fuelLevel) >= 10000) {
             list.style.visibility = "visible";
 
             fuelStatus.innerHTML = `Fuel level high enough for launch`;
@@ -92,24 +114,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
             launchStatus.innerHTML = `Shuttle is Ready for Launch`;
 
-            return;
-            
-            
-       }
-
-       if (Number(cargoLevel) <= 10000) {
-            list.style.visibility = "visible";
-
-            fuelStatus.innerHTML = `Fuel level high enough for launch`;
-
-            cargoStatus.innerHTML = `Cargo mass low enough for launch`;
-
-            launchStatus.style.color = "rgb(65, 159, 106)";
-
-            launchStatus.innerHTML = `Shuttle is Ready for Launch`;
-
-            return;
-            
             
        }
 
