@@ -28,9 +28,15 @@ function validateInput(testInput) {
 }
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-            let pilotStatus = document.querySelector("li[id=pilotStatus]");
-
             let copilotStatus = document.querySelector("li[id=copilotStatus]");
+
+            let pilotName = document.querySelector("input[name=pilotName]");
+
+            let copilotName = document.querySelector("input[name=copilotName]");
+
+            let cargoMass = document.querySelector("input[name=cargoMass]");
+
+            let pilotStatus = document.querySelector("li[id=pilotStatus]");
 
             list.style.visibility = "hidden";
 
@@ -39,7 +45,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
 
         if (Number(fuelLevel) < 10000) {
-            let faultyItems = window.document.querySelector("div[id=faultyItems]");
+            let faultyItems = document.querySelector("div[id=faultyItems]");
 
             list.style.visibility = "visible";
 
