@@ -61,6 +61,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
            launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
 
            launchStatus.style.color = "rgb(199, 37, 78)";
+
+           return;
         }
 
         if (Number(fuelLevel) < 10000) {
@@ -73,6 +75,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
 
             launchStatus.style.color = "rgb(199, 37, 78)";
+
+            return;
 
            
        }
@@ -87,6 +91,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             launchStatus.style.color = "rgb(65, 159, 106)";
 
             launchStatus.innerHTML = `Shuttle is Ready for Launch`;
+
+            return;
             
             
        }
@@ -101,6 +107,8 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             launchStatus.style.color = "rgb(65, 159, 106)";
 
             launchStatus.innerHTML = `Shuttle is Ready for Launch`;
+
+            return;
             
             
        }
