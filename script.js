@@ -86,6 +86,14 @@ window.addEventListener("load", function() {
             event.preventDefault();
             return;
         } else {
+            let pilotStatus = window.document.querySelector("li[id=pilotStatus]");
+
+            let copilotStatus = window.document.querySelector("li[id=copilotStatus]");
+
+            let pilotName = window.document.querySelector("input[name=pilotName]");
+
+            let copilotName = window.document.querySelector("input[name=copilotName]");
+
             formSubmission(document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value);
 
             event.preventDefault();

@@ -31,14 +31,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
         list.style.visibility = "hidden";
 
-        let pilotStatus = window.document.querySelector("li[id=pilotStatus]");
-
-        let copilotStatus = window.document.querySelector("li[id=copilotStatus]");
-
-        let pilotName = window.document.querySelector("input[name=pilotName]");
-
-        let copilotName = window.document.querySelector("input[name=copilotName]");
-
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
 
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
