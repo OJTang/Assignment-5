@@ -87,43 +87,7 @@ window.addEventListener("load", function() {
             return;
         } else {
             formSubmission(document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value);
-            if (formSubmission(document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value) === 1) {
-                list.style.visibility = "visible";
 
-                fuelStatus.innerHTML = `Fuel level too low for launch`;
-
-                launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
-
-                launchStatus.style.color = "red";
-
-                event.preventDefault();
-            
-            return;
-            } else if (formSubmission(document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value) === 2){
-                list.style.visibility = "visible";
-
-                cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
-
-                launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
-
-                launchStatus.style.color = "red";
-
-                event.preventDefault();
-
-           return;
-            } else if (formSubmission(document, list, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value) === 3) {
-                list.style.visibility = "visible";
-
-                fuelStatus.innerHTML = `Fuel level high enough for launch`;
-
-                cargoStatus.innerHTML = `Cargo mass low enough for launch`;
-
-                launchStatus.style.color = "green";
-
-                launchStatus.innerHTML = `Shuttle is ready for launch`;
-
-                event.preventDefault();
-            }
             event.preventDefault();
         }
 

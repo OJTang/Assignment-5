@@ -31,13 +31,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
         list.style.visibility = "hidden";
 
-        let pilotStatus = document.querySelector("li[id=pilotStatus]");
+        let pilotStatus = window.document.querySelector("li[id=pilotStatus]");
 
-        let copilotStatus = document.querySelector("li[id=copilotStatus]");
+        let copilotStatus = window.document.querySelector("li[id=copilotStatus]");
 
-        let pilotName = document.querySelector("input[name=pilotName]");
+        let pilotName = window.document.querySelector("input[name=pilotName]");
 
-        let copilotName = document.querySelector("input[name=copilotName]");
+        let copilotName = window.document.querySelector("input[name=copilotName]");
 
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
 
@@ -46,34 +46,34 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         let cargoMass = document.querySelector("input[name=cargoMass]");
 
         if (Number(fuelLevel) < 10000) {
-            /*let faultyItems = document.querySelector("div[id=faultyItems]");
+            let faultyItems = window.document.querySelector("div[id=faultyItems]");
 
-            faultyItems.style.visibility = "visible";
+            list.style.visibility = "visible";
 
             fuelStatus.innerHTML = `Fuel level too low for launch`;
 
             launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
 
-            launchStatus.style.color = "red";*/
+            launchStatus.style.color = "red";
             
-            return 1;
+            return;
             
        }
 
         if (Number(cargoLevel) > 10000) {
-           /*list.style.visibility = "visible";
+           list.style.visibility = "visible";
 
            cargoStatus.innerHTML = `Cargo mass too heavy for launch`;
 
            launchStatus.innerHTML = `Shuttle Not Ready for Launch`;
 
-           launchStatus.style.color = "red";*/
+           launchStatus.style.color = "red";
 
-           return 2;
+           return;
        } 
 
        if (Number(fuelLevel) >= 10000 && Number(cargoLevel) <= 10000) {
-            /*list.style.visibility = "hidden";
+            list.style.visibility = "visible";
 
             fuelStatus.innerHTML = `Fuel level high enough for launch`;
 
@@ -81,9 +81,9 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
             launchStatus.style.color = "green";
 
-            launchStatus.innerHTML = `Shuttle is ready for launch`;*/
+            launchStatus.innerHTML = `Shuttle is ready for launch`;
             
-            return 3;
+            return;
        }
 
     
